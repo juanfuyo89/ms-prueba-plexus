@@ -1,6 +1,5 @@
 package com.between.prueba.service;
 
-import com.between.prueba.constant.Constant;
 import com.between.prueba.dto.TokenResponse;
 import com.between.prueba.repository.UserRepository;
 import com.between.prueba.security.JWTAuthorizationFilter;
@@ -21,9 +20,9 @@ import org.springframework.web.server.ResponseStatusException;
 public class TokenServiceImpl implements TokenService {
 
     @Autowired
-    UserRepository userRepository;
+    private UserRepository userRepository;
     @Autowired
-    TokenGenerator tokenGenerator;
+    private TokenGenerator tokenGenerator;
 
     @Value("${app.security.expiration}")
     private String expiration;

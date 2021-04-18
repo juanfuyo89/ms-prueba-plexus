@@ -4,7 +4,6 @@ import com.between.prueba.dto.ProductPriceResponse;
 import com.between.prueba.repository.PriceRepository;
 import com.between.prueba.repository.entity.Price;
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.dozer.DozerBeanMapper;
@@ -26,7 +25,7 @@ public class ProductPriceServiceImpl implements ProductPriceService {
     private DozerBeanMapper dozerBeanMapper;
 
     @Autowired
-    PriceRepository priceRepository;
+    private PriceRepository priceRepository;
 
     public ProductPriceResponse getProductPrice(LocalDateTime applicationDate,
                                                 Integer productId, Integer brandId) throws Throwable {
