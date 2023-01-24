@@ -23,6 +23,8 @@ public class JWTAuthorizationFilter extends OncePerRequestFilter {
         try {
             if (request.getRequestURI().contains("token")) {
                 SecurityContextHolder.getContext().setAuthentication(new UsernamePasswordAuthenticationToken(null, null, null));
+            } else if(request.getRequestURI().contains("productPrice")) {
+                SecurityContextHolder.getContext().setAuthentication(new UsernamePasswordAuthenticationToken(null, null, null));
             } else if(request.getRequestURI().contains("h2-console")) {
                 SecurityContextHolder.getContext().setAuthentication(new UsernamePasswordAuthenticationToken(null, null, null));
             } else if(request.getRequestURI().contains("swagger-ui.html")) {

@@ -39,6 +39,7 @@ public class RestConfig extends WebSecurityConfigurerAdapter {
                 .addFilterAfter(new JWTAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class)
                 .authorizeRequests()
                 .antMatchers(HttpMethod.GET, "/getToken/**").permitAll()
+                .antMatchers(HttpMethod.GET, "/productPrice/**").permitAll()
                 .antMatchers(HttpMethod.GET, "/h2-console/**").permitAll()
                 .antMatchers(HttpMethod.OPTIONS).permitAll()
                 .anyRequest().authenticated();
